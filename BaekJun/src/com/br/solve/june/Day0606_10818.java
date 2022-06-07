@@ -1,5 +1,6 @@
 package com.br.solve.june;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Day0606_10818 {
@@ -10,25 +11,15 @@ public class Day0606_10818 {
 		int a = sc.nextInt();
 		int [] arr = new int[a];
 		
-		int max = 1000000;
-		int min = -1000000;
-		
 		for(int i = 0; i < a; i++) {
 			arr[i] = sc.nextInt();
 		}
 		
-		int maxmax = 0;
+		Arrays.sort(arr); //배열정렬
+		int max = arr[arr.length-1];
+		int min = arr[0];
 		
-		for(int i = 0; i<arr.length; i++) {
-			if(arr[].next()) {
-				if(arr[i] > arr[i+1]) {
-					maxmax = arr[i];
-				} else {
-					maxmax = arr[i+1];
-				}
-			}
-			
-		}
+		System.out.printf("%d %d", min, max);
 	}
 
 }
