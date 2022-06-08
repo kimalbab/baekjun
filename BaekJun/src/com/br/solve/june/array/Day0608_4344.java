@@ -1,4 +1,4 @@
-package com.br.solve.june;
+package com.br.solve.june.array;
 
 import java.util.Scanner;
 

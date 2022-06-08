@@ -1,4 +1,4 @@
-package com.br.solve.june;
+package com.br.solve.june.array;
 
 import java.util.Scanner;
 
@@ -15,7 +15,7 @@ public class Day0607_8958 {
 		for(int i = 0; i < arr.length; i++) {
 			arr[i] = sc.nextLine();
 		}
-		
+		 
 		// count 하는 변수가 필요하다
 		// sum 도 필요하다. 더해줘야하니까.
 		// 그런데 그 두 변수는 배열을 돌 때 마다 초기화 되어야 한다.
