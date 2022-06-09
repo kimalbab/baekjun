@@ -8,15 +8,25 @@ public class Day0609_11720 {
 		Scanner sc = new Scanner(System.in);
 		
 		int a = Integer.parseInt(sc.nextLine());
+		
 		String s = sc.nextLine();
-		int[] arr = new int[a];
+		
 		int sum = 0;
 		
+		char [] arr = s.toCharArray();
+		String [] stArr = new String [a];
+		
 		for(int i = 0; i < a; i++) {
-			arr[i] = s.charAt(i);
-			System.out.println(arr[i]);
+			
+			stArr[i] = Character.toString(arr[i]);
+			
 		}
 		
+		for(int i = 0; i < a; i++) {
+			
+			sum += Integer.parseInt(stArr[i]);
+			
+		}
 		System.out.println(sum);
 	}
 
