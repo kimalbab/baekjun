@@ -22,15 +22,35 @@ public class Day0609_10809 {
 		for(int i = 97; i < 123; i++) {
 			arr[i-97] = (char) i;
 		}
-		
-		for(int i = 0; i < s.length(); i++) {
+		/*
+		 * while 문을 돌려서..
+		 * 반복 자체는 일차에서 알파벳만큼 돌게하고 만약 
+		 * 두 수가 가
+		 * for(int i = 0; i < s.length(); i++) {
 			int count = -1;
+			
 			for(int j = 0; j < arr.length; j++) {
-				if(s.charAt(j) == arr[i]) {
+				if(s.charAt(i) == arr[j]) {
 					count ++;
+			}
+				System.out.println(count);
+			}
+		}
+		 */
+		
+		for(int i=0; i<s.length(); i++) {
+			while(true) {
+				
+				for(int j = 0; j < arr.length; j++) {
+					int count = -1;
+					if(s.charAt(i) != arr[j]) {
+						count ++;
+				} 
+					System.out.println(count);
 				}
 			}
 		}
-	}
+			}
+			
 
 }
