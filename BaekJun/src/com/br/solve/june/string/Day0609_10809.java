@@ -16,41 +16,51 @@ public class Day0609_10809 {
 		//먼저 알파벳 배열.. 소문자 알파벳 배열을 문자화시켜서 배열을 만들어야한다.
 		Scanner sc = new Scanner(System.in);
 		String s = sc.nextLine();
+		String[] sArr = new String[s.length()];
+		String[] arr = new String[26];
 		
-		char[] arr = new char[26];
+		for(int i = 0; i < s.length(); i++) {
+			sArr[i] = Character.toString(s.charAt(i));
+		}
 		
+		// arr에 알파벳 배열을 담기
 		for(int i = 97; i < 123; i++) {
-			arr[i-97] = (char) i;
+			arr[i-97] = String.valueOf((char) i);
 		}
-		/*
-		 * while 문을 돌려서..
-		 * 반복 자체는 일차에서 알파벳만큼 돌게하고 만약 
-		 * 두 수가 가
-		 * for(int i = 0; i < s.length(); i++) {
-			int count = -1;
-			
-			for(int j = 0; j < arr.length; j++) {
-				if(s.charAt(i) == arr[j]) {
-					count ++;
-			}
-				System.out.println(count);
-			}
-		}
-		 */
 		
-		for(int i=0; i<s.length(); i++) {
-			while(true) {
-				
-				for(int j = 0; j < arr.length; j++) {
-					int count = -1;
-					if(s.charAt(i) != arr[j]) {
-						count ++;
-				} 
-					System.out.println(count);
+		int[] intArr = new int[26];
+		
+		for(int i = 0; i < 26; i++) {
+			intArr[i] = -1;
+		}
+		
+		// 일단 알파벳들은 출력되어야 함
+		for(int i = 0; i < 26; i++) {
+		// 알파벳 하나마다 반복문을 돌려서 그 알파벳이 있는지 조건검사 해야함
+		for(int j=0; j<sArr.length; j++) {
+				if(intArr[i] == -1) {
+					if(arr[i].equals(sArr[j])) {
+						while(sArr[j].equals(arr[i])) {
+							//System.out.println("sArr[" + j + "] : " + sArr[j] + "  arr[" + i + "] : " + arr[i] + "   intArr[" + i + " ] : " + intArr[i] +  " i : " + i + "   j : " + j);
+							intArr[i] = j;
+							//System.out.println("확 : " + intArr[i]);
+							break;
+						}
+						
+					}
 				}
 			}
 		}
-			}
+		
+		for(int l=0; l<26; l++) {
+			System.out.print(intArr[l] + " ");
+		}
+		
+		}
+	}
+
+
+	
+			
 			
 
-}
